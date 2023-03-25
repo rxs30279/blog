@@ -26,10 +26,12 @@ BASE_DIR = Path(__file__).resolve().parent.parent
 SECRET_KEY = "django-insecure-74@9#ww7@y4y#k1)8(yb55n!nw6@mc6gx=a5(sh$eq6%t$0sdc"
 
 # SECURITY WARNING: don't run with debug turned on in production!
-DEBUG = False
+DEBUG = True
 
-ALLOWED_HOSTS = ["*"]
+ALLOWED_HOSTS = ["127.0.0.1", ".vercel.app"]
 
+LOGIN_REDIRECT_URL = "home"
+LOGOUT_REDIRECT_URL = "home"
 
 # Application definition
 
@@ -41,6 +43,7 @@ INSTALLED_APPS = [
     "django.contrib.messages",
     "django.contrib.staticfiles",
     "blog.apps.BlogConfig",
+    "accounts.apps.AccountsConfig",
 ]
 
 MIDDLEWARE = [
